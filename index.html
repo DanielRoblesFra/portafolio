@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- WRAPPER ÚNICO — controla el ancho de toda la página -->
+    <div class="wrapper">
+
+        <!-- HEADER / INFO PERSONAL -->
+        <header class="info-personal">
+
+            <div class="foto">
+                <img src="imgs/Yo.png" alt="portada">
+            </div>
+
+            <div class="contenido-header">
+
+                <div class="name">
+                    <h1>Orlando Daniel Robles Franco<span class="punto">.</span></h1>
+                </div>
+
+                <div class="ocupaciones">
+                    <h3 id="typing-text"></h3>
+                </div>
+
+                <div class="botones">
+                    <button class="cv" id="downloadCV">
+                        <i class="fa-solid fa-download"></i>
+                        <span class="texto-btn">CV</span>
+                    </button>
+                    <a href="https://wa.me/521XXXXXXXXXX" target="_blank" class="contacto">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- DIVISOR -->
+        <div class="divisor"></div>
+
+        <!-- SECCIÓN EXPERIENCIA -->
+        <section class="contenedor-experiencia">
+
+            <h1 class="tutulo">Experiencia</h1>
+
+            <div class="exp-card">
+                <h3 class="sistemas">Ingeniero en Soporte Tecnico e Infraestructura</h3>
+                <p class="periodo">Noviembre 2024 — Actualidad</p>
+                <ul class="lista">
+                    <li>Apoyo en Soporte Tecnico.</li>
+                    <li>Gestión y configuración de entornos de virtualización con Proxmox.</li>
+                    <li>Administración básica de sistemas operativos Linux.</li>
+                    <li>Implementación y puesta en marcha de servidores.</li>
+                    <li>Administración y gestión de interfaces web (UI) y plataformas basadas en web.</li>
+                    <li>Soporte en despliegue y mantenimiento de entornos tecnológicos empresariales.</li>
+                </ul>
+            </div>
+
+            <div class="exp-card">
+                <h3 class="sistemas">Coach de Boxeo</h3>
+                <p class="periodo">Octubre 2016 — Actualidad</p>
+                <ul class="lista">
+                    <li>Entrenador personalizado y general en acondicionamiento físico y boxeo.</li>
+                    <li>Planificación y ejecución de programas de preparación física general y específica para boxeadores.</li>
+                    <li>Seguimiento del rendimiento, disciplina y evolución deportiva de los atletas.</li>
+                    <li>Dirección técnica en esquina durante combates oficiales.</li>
+                </ul>
+            </div>
+
+        </section>
+
+        <!-- SECCIÓN PROYECTOS -->
+        <section class="contenedor-proyectos">
+
+            <h1 class="tutulo">Proyectos</h1>
+
+            <div class="proyectos-grid">
+
+                <!-- TARJETA: FONDITA -->
+                <div class="proyecto-card">
+                    <img class="proyecto-img" src="imgs/fondita.png" alt="Fondita">
+                    <div class="proyecto-info">
+                        <p class="proyecto-nombre">Fondita</p>
+                        <div class="tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                        <p class="proyecto-desc">
+                            Página web para que una fondita muestre su menú semanal a clientes.
+                            El administrador puede gestionar y actualizar los platillos en tiempo real.
+                        </p>
+                        <div class="proyecto-btns">
+                            <a href="https://danielroblesfra.github.io/fondita-production/" target="_blank" class="btn-demo">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver proyecto
+                            </a>
+                            <a href="https://github.com/danielroblesfra/fondita-production" target="_blank" class="btn-github">
+                                <i class="fa-brands fa-github"></i> Código
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TARJETA: INVITACIÓN BODA -->
+                <div class="proyecto-card">
+                    <img class="proyecto-img" src="imgs/boda.png" alt="Invitación de Boda">
+                    <div class="proyecto-info">
+                        <p class="proyecto-nombre">Invitación de Boda</p>
+                        <div class="tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                        <p class="proyecto-desc">
+                            Invitación digital con animaciones, portada, cuenta regresiva,
+                            ubicación, carrusel de imágenes e información adicional de la boda.
+                        </p>
+                        <div class="proyecto-btns">
+                            <a href="https://danielroblesfra.github.io/invitacionBoda/" target="_blank" class="btn-demo">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Ver proyecto
+                            </a>
+                            <a href="https://github.com/danielroblesfra/invitacionBoda" target="_blank" class="btn-github">
+                                <i class="fa-brands fa-github"></i> Código
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- SECCIÓN BOXEO -->
+        <section class="contenedor-boxeo">
+
+            <h1 class="tutulo">Boxeo</h1>
+
+            <div class="boxeo-grid">
+
+                <!-- TARJETA 1: MANOPLEO -->
+                <div class="boxeo-card">
+                    <div class="boxeo-video-wrap">
+                        <video class="boxeo-video" src="videos/video1.mp4" autoplay loop muted playsinline></video>
+                    </div>
+                    <div class="boxeo-texto">
+                        <p class="boxeo-titulo">Sesión de Manopleo</p>
+                    </div>
+                </div>
+
+                <!-- TARJETA 2: COSTAL -->
+                <div class="boxeo-card">
+                    <div class="boxeo-video-wrap">
+                        <video class="boxeo-video" src="videos/video2.mp4" autoplay loop muted playsinline></video>
+                    </div>
+                    <div class="boxeo-texto">
+                        <p class="boxeo-titulo">Sesión de Costal</p>
+                    </div>
+                </div>
+
+                <!-- TARJETA 3: ESCUELA -->
+                <div class="boxeo-card">
+                    <div class="boxeo-video-wrap">
+                        <video class="boxeo-video" src="videos/video3.mp4" autoplay loop muted playsinline></video>
+                    </div>
+                    <div class="boxeo-texto">
+                        <p class="boxeo-titulo">Escuela de Boxeo</p>
+                    </div>
+                </div>
+
+                <!-- TARJETA 4: SPARRING -->
+                <div class="boxeo-card">
+                    <div class="boxeo-video-wrap">
+                        <video class="boxeo-video" src="videos/video4.mp4" autoplay loop muted playsinline></video>
+                    </div>
+                    <div class="boxeo-texto">
+                        <p class="boxeo-titulo">Sesión de Sparring</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DIVISOR -->
+        <div class="divisor"></div>
+
+
+            <!-- SECCIÓN COMENTARIOS -->
+        <section class="contenedor-comentarios">
+
+            <!-- COMILLA DECORATIVA -->
+            <div class="comilla">,,</div>
+
+            <div class="testimonios-grid">
+
+                <!-- TESTIMONIO 1: ROMINA -->
+                <div class="testimonio-card">
+                    <p class="testimonio-texto">
+                        &ldquo;Excelente entrenador, te llevará exactamente al nivel donde hoy te estás visualizando.&rdquo;
+                    </p>
+                    <div class="testimonio-autor">
+                        <img class="testimonio-foto" src="imgs/ref1.jpg" alt="Romina Ugalde Rubio">
+                        <div class="testimonio-datos">
+                            <span class="testimonio-nombre">Romina Ugalde Rubio</span>
+                            <span class="testimonio-cargo">Alumna</span>
+                            <span class="testimonio-contexto">Escuela de Boxeo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TESTIMONIO 2: MALINA -->
+                <div class="testimonio-card">
+                    <p class="testimonio-texto">
+                        &ldquo;Una persona preparada, productiva y con la actitud correcta para construir en conjunto.&rdquo;
+                    </p>
+                    <div class="testimonio-autor">
+                        <img class="testimonio-foto" src="imgs/ref2.jpg" alt="Malina Robles Rubio">
+                        <div class="testimonio-datos">
+                            <span class="testimonio-nombre">Malina Robles Rubio</span>
+                            <span class="testimonio-cargo">TSU Informática</span>
+                            <span class="testimonio-contexto">Jefa de Departamento de S.T</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+    <!-- FIN WRAPPER -->
+
+      <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-inner">
+
+            <!-- TEXTO Y CORREO -->
+            <div class="footer-texto">
+                <h2><span>Contáctame</span> en:</h2>
+                <p class="footer-correo">
+                    <a href="mailto:danielroblesfra@gmail.com">danielroblesfra@gmail.com</a>
+                </p>
+            </div>
+
+            <!-- REDES SOCIALES — CARRUSEL -->
+            <div class="footer-redes-wrap">
+                <!-- carrusel infinito -->
+                <div class="footer-redes-track">
+
+                    <a href="#" target="_blank" class="red-social" title="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" target="_blank" class="red-social" title="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" target="_blank" class="red-social" title="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="#" target="_blank" class="red-social" title="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    
+                    <a href="#" target="_blank" class="red-social" title="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" target="_blank" class="red-social" title="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" target="_blank" class="red-social" title="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="#" target="_blank" class="red-social" title="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#" target="_blank" class="red-social" title="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" target="_blank" class="red-social" title="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" target="_blank" class="red-social" title="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="#" target="_blank" class="red-social" title="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
