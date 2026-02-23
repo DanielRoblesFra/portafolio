@@ -24,7 +24,6 @@ function aplicarColor(texto) {
 
         for (const { palabra, color } of colores) {
             const fragmento = texto.substring(i);
-            // Verifica si en esta posición empieza (total o parcialmente) la palabra
             if (palabra.startsWith(fragmento.substring(0, palabra.length)) || fragmento.startsWith(palabra.substring(0, fragmento.length))) {
                 const coincide = currentText.substring(i).startsWith(palabra.substring(0, texto.length - i));
                 if (coincide && currentText.indexOf(palabra) === i) {
@@ -74,9 +73,92 @@ typeEffect();
 
 document.getElementById("downloadCV").addEventListener("click", function() {
     const link = document.createElement("a");
-    link.href = "cv.pdf";
-    link.download = "Orlando_Daniel_CV.pdf"; 
-    document.body.appendChild(link); 
+    link.href = "cv/Resumen_Profesional.pdf";
+    link.download = "CV_Daniel_Robles";
+    document.body.appendChild(link);
     link.click();
-    document.body.removeChild(link); 
+    document.body.removeChild(link);
+});
+
+// ======== OVERLAY — EXPANDIR TARJETAS Y VIDEOS ========
+
+const overlay        = document.getElementById("overlay");
+const overlayContenido = document.getElementById("overlayContenido");
+
+// Detectar si es móvil
+function esMobil() {
+    return window.innerWidth <= 480;
+}
+
+// Abrir overlay con contenido clonado
+function abrirOverlay(contenido) {
+    overlayContenido.innerHTML = "";
+
+    // Botón cerrar
+    const btnCerrar = document.createElement("button");
+    btnCerrar.classList.add("overlay-cerrar");
+    btnCerrar.innerHTML = "✕";
+    btnCerrar.addEventListener("click", cerrarOverlay);
+
+    overlayContenido.appendChild(btnCerrar);
+    overlayContenido.appendChild(contenido);
+    overlay.classList.add("activo");
+    document.body.style.overflow = "hidden";
+}
+
+// Cerrar overlay
+function cerrarOverlay() {
+    overlay.classList.remove("activo");
+    document.body.style.overflow = "";
+
+    // Detener video si hay uno dentro del overlay
+    const videoOverlay = overlayContenido.querySelector("video");
+    if (videoOverlay) videoOverlay.pause();
+
+    overlayContenido.innerHTML = "";
+}
+
+// Cerrar al hacer click en el fondo
+overlay.addEventListener("click", function(e) {
+    if (e.target === overlay) cerrarOverlay();
+});
+
+// Cerrar con tecla Escape
+document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") cerrarOverlay();
+});
+
+// ---- TARJETAS DE PROYECTOS ----
+document.querySelectorAll(".proyecto-card").forEach(card => {
+    card.addEventListener("click", function() {
+        // En móvil no hacemos nada con proyectos
+        if (esMobil()) return;
+
+        const clon = card.cloneNode(true);
+
+        // Los botones del clon deben abrir links sin cerrar overlay
+        clon.querySelectorAll("a").forEach(a => {
+            a.addEventListener("click", e => e.stopPropagation());
+        });
+
+        abrirOverlay(clon);
+    });
+});
+
+// ---- VIDEOS DE BOXEO ----
+document.querySelectorAll(".boxeo-video-wrap").forEach(wrap => {
+    wrap.addEventListener("click", function() {
+        const videoOriginal = wrap.querySelector("video");
+
+        // Crear video nuevo con la misma fuente
+        const videoClonado = document.createElement("video");
+        videoClonado.src = videoOriginal.src;
+        videoClonado.autoplay = true;
+        videoClonado.loop = true;
+        videoClonado.muted = true;
+        videoClonado.playsInline = true;
+        videoClonado.controls = true; // Con controles en el overlay
+
+        abrirOverlay(videoClonado);
+    });
 });
