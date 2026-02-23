@@ -608,6 +608,92 @@ footer {
     transform: translateY(-3px);
 }
 
+/* ============================================
+    OVERLAY — EXPANDIR TARJETAS Y VIDEOS
+   ============================================ */
+
+/* Cursor personalizado en tarjetas y videos */
+.proyecto-card,
+.boxeo-video-wrap {
+    cursor: zoom-in;
+}
+
+/* Fondo oscuro difuminado */
+.overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    animation: fadeIn 0.25s ease;
+}
+
+.overlay.activo {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Contenido centrado dentro del overlay */
+.overlay-contenido {
+    position: relative;
+    max-width: 760px;
+    width: 100%;
+    animation: zoomIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.7); opacity: 0; }
+    to   { transform: scale(1);   opacity: 1; }
+}
+
+/* Botón cerrar */
+.overlay-cerrar {
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #1a1a2e;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: transform 0.2s;
+}
+
+.overlay-cerrar:hover {
+    transform: scale(1.1);
+}
+
+/* Tarjeta de proyecto expandida */
+.overlay-contenido .proyecto-card {
+    cursor: default;
+    width: 100%;
+    border-color: rgba(173, 255, 47, 0.3);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* Video expandido */
+.overlay-contenido video {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+}
+
 
 /* ============================================
     RESPONSIVE — TABLETAS (max 768px)
@@ -699,6 +785,11 @@ footer {
         font-size: 0.82rem;
     }
 /* Proyectos — móviles */
+    .proyecto-card{
+        border-color: rgba(173, 255, 47, 0.25);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+    }
+
     .proyectos-grid {
         grid-template-columns: 1fr;
     }
@@ -738,5 +829,21 @@ footer {
         flex-direction: column;
         align-items: flex-start;
         gap: 24px;
+    }
+
+    /*OVERLAY MOVILES*/
+    .overlay {
+        padding: 16px;
+        align-items: center;
+    }
+
+    .overlay-contenido {
+        max-width: 100%;
+        animation: slideUp 0.3s ease;
+    }
+
+    @keyframes slideUp {
+        from { transform: translateY(40px); opacity: 0; }
+        to   { transform: translateY(0);    opacity: 1; }
     }
 }
